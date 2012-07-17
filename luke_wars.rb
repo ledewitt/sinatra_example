@@ -53,7 +53,12 @@ get '/hello/:name' do
   "Hello #{params[:name]}!"
 end
 
-get("/sector/:number") {
+# get('/sector/:number/:sector_number') {
+#   erb :number
+#   # "Number: #{params[:number]}"
+# }
+
+get("/sector/:sector_number") {
   erb :sector
   # "Number: #{params[:number]}"
 }
@@ -71,4 +76,9 @@ end
 
 get '/win_a_car' do
   "Sorry, you lost."
+end
+
+get '/time' do
+  code = "<%= Time.now %>"
+  erb code
 end
