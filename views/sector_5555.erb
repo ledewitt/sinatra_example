@@ -1,6 +1,6 @@
 <h1>Sector <%= params[:number] %></h1>
 
-<% next_sector = [ 3219, 5678 ] %>
+<h2>Testing <%= SECTORS[params[:number].to_i] %> </h2>
 
 <ul>
   <p>
@@ -9,8 +9,8 @@
 	
 	  <!-- Would like to do a ruby for each item in next_sector here -->
 	
-	  <a href="/sector/<%= next_sector[0] %>">
-		  Go to sector <%= next_sector[0] %>
+	  <a href="/sector/<%= SECTORS[params[:number].to_i][0] %>">
+		  Go to sector <%= SECTORS[params[:number].to_i][0] %>
 		</a>
 	</center>
 	</p>
@@ -21,9 +21,10 @@
 	
 	  <!-- Would like to do a ruby for each item in next_sector here -->
 	
-	  <a href="/sector/<%= next_sector[1] %>">
-		  Go to sector <%= next_sector[1] %>
+	  <a href="/sector/<%= SECTORS[params[:number].to_i][1] %>">
+		  Go to sector <%= SECTORS[params[:number].to_i][1] %>
 		</a>
 	</center>
 	</p>
+		
 </ul>
