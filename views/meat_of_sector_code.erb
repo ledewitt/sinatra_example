@@ -1,0 +1,14 @@
+<ul>
+	<p>
+		<center>
+			From this sector you may travel to: <br><br>
+		  <% locals[:neighbors].each do |number| %>
+		    <p>
+		      <a href="/sector/<%= number %>">
+				    Sector <%= number %>
+				  </a>
+				</p>
+		  <% end %>	
+		</center>
+	</p>	
+</ul>
