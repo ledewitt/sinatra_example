@@ -45,40 +45,24 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
-# SECTORS = { 2000 3401 1111 3219 }
-
-get '/hello/:name' do
-  # matches "GET /hello/foo" and "GET /hello/bar"
-  # params[:name] is 'foo' or 'bar'
-  "Hello #{params[:name]}!"
-end
+SECTORS = [ 2000, 3401, 1111, 3219 ]
 
 # get('/sector/:number/:sector_number') {
 #   erb :number
 #   # "Number: #{params[:number]}"
 # }
 
-get("/sector/:sector_number") {
-  erb :sector
-  # "Number: #{params[:number]}"
+# get("/sector/:sector_number") {
+#   erb :sector
+#   # "Number: #{params[:number]}"
+# }
+
+
+get('/sector/:number') {
+  if SECTORS.include? params[:number].to_i
+    # "sector_#{params[:number]}"
+    erb "sector_#{params[:number]}".to_sym
+  else
+    "Back off man I'm a scientist.  IE not a valid sector of space!"
+  end
 }
-
-get '/say/*/to/*' do
-  # matches /say/hello/to/world
-  params[:splat] # => ["hello", "world"]
-end
-
-set(:probability) { |value| condition { rand <= value } }
-
-get '/win_a_car', :probability => 0.5 do
-  "You won!"
-end
-
-get '/win_a_car' do
-  "Sorry, you lost."
-end
-
-get '/time' do
-  code = "<%= Time.now %>"
-  erb code
-end

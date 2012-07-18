@@ -1,0 +1,29 @@
+<h1>Sector <%= params[:number] %></h1>
+
+<% next_sector = [ 1111, 3401 ] %>
+
+<ul>
+  <p>
+	<center>
+	  From this sector you may travel to: <br><br>
+	
+	  <!-- Would like to do a ruby for each item in next_sector here -->
+	
+	  <a href="/sector/<%= next_sector[0] %>">
+		  Go to sector <%= next_sector[0] %>
+		</a>
+	</center>
+	</p>
+
+  <p>
+	<center>
+	  From this sector you may travel to: <br><br>
+	
+	  <!-- Would like to do a ruby for each item in next_sector here -->
+	
+	  <a href="/sector/<%= next_sector[1] %>">
+		  Go to sector <%= next_sector[1] %>
+		</a>
+	</center>
+	</p>
+</ul>
