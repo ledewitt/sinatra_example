@@ -18,11 +18,11 @@
 # 6. Add very simple authentication to API
 # ...
 
-# 2000 <-> 3401
-#  ^        ^
-#  |        |
-#  V        V
-# 1111 <-> 3219
+# 2000 <-> 3401     5678
+#  ^        ^        ^
+#  |        |        |
+#  V        V        V
+# 1111 <-> 3219 <-> 5555
 
 # User Agent (Browser) ------- HTTP Request ------> *Server*
 #                                                      |
