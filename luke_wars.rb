@@ -45,7 +45,10 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
-SECTORS = [ 2000, 3401, 1111, 3219 ]
+SECTORS = { 1111 => [2000, 3219],
+            2000 => [1111, 2401],
+            3401 => [2000, 3219],
+            3219 => [1111, 3219] }
 
 # get('/sector/:number/:sector_number') {
 #   erb :number
