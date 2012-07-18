@@ -55,18 +55,8 @@ SECTORS = { 1111 => [2000, 3219],
 get('/sector/:number') {
   if SECTORS.include? params[:number].to_i
     # "sector_#{params[:number]}"
-    erb "sector_#{params[:number]}".to_sym, locals: { SECTORS: SECTORS }
+    erb :sector, locals: { SECTORS: SECTORS }
   else
     "Back off man I'm a scientist.  IE not a valid sector of space!"
   end
 }
-
-# get('/sector/:number/:sector_number') {
-#   erb :number
-#   # "Number: #{params[:number]}"
-# }
-
-# get("/sector/:sector_number") {
-#   erb :sector
-#   # "Number: #{params[:number]}"
-# }

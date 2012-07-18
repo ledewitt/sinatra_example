@@ -1,18 +1,18 @@
-<h1>Sector <%= params[:sector_number] %></h1>
+<h1>Sector <%= params[:number] %></h1>
+
+<h2>Testing <%= SECTORS[params[:number].to_i] %> </h2>
 
 <ul>
-	<% %w[Luke James].each do |name| %>
-	  <li><%= name %></li>
-	<% end %>
-
-  <%= erb :sector_number %>
-
-  <!-- <p>
-	  <a href = "localhost:4567/sector/1111"> Sector 1111 </a>
-	</p>
-
-  <p>
-	  <a href = "localhost:4567/sector/3401"> Sector 3401 </a>
-	</p> -->
-
+	<p>
+		<center>
+		  <% SECTORS[params[:number].to_i].each do |number| %>
+		    <p>
+		 		  From this sector you may travel to: <br><br>
+		      <a href="/sector/<%= number %>">
+				    Sector <%= number %>
+				  </a>
+				</p>
+		  <% end %>	
+		</center>
+	</p>	
 </ul>
