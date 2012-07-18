@@ -48,7 +48,18 @@ require "sinatra/reloader" if development?
 SECTORS = { 1111 => [2000, 3219],
             2000 => [1111, 2401],
             3401 => [2000, 3219],
-            3219 => [1111, 3219] }
+            3219 => [1111, 3219, 5555],
+            5555 => [3219, 5678],
+            5678 => [5555] }
+
+get('/sector/:number') {
+  if SECTORS.include? params[:number].to_i
+    # "sector_#{params[:number]}"
+    erb "sector_#{params[:number]}".to_sym
+  else
+    "Back off man I'm a scientist.  IE not a valid sector of space!"
+  end
+}
 
 # get('/sector/:number/:sector_number') {
 #   erb :number
@@ -59,13 +70,3 @@ SECTORS = { 1111 => [2000, 3219],
 #   erb :sector
 #   # "Number: #{params[:number]}"
 # }
-
-
-get('/sector/:number') {
-  if SECTORS.include? params[:number].to_i
-    # "sector_#{params[:number]}"
-    erb "sector_#{params[:number]}".to_sym
-  else
-    "Back off man I'm a scientist.  IE not a valid sector of space!"
-  end
-}
