@@ -1,36 +1,14 @@
-<head>
-	<style type="text/css" media="screen">
-	  ul {
-		      width:           100%;
-	        text-align:      center;
-          padding:         0;
-          margin:					 0;
-       }
-	  ul li {
-		        width:           100%;
-		        text-align:      center;
-		        list-style-type: none;
-		        padding:         0;
-		        margin:					 0;
-	        }
-	</style>
-</head>
-
 <h1>Sector <%= sector %></h1>
-
-<!-- <h2><%= neighbors %> </h2> -->
 
 <h2>From this sector you may travel to:</h2>
 
-<br>
-
 <ul>
-	<% neighbors.each do |number| %>
-	  <li>
-		  <a href="/sector/<%= number %>">
-			  Sector <%= number %>
-			</a>
-	  </li>
-	<% end %>		
+  <% neighbors.each do |number| %>
+    <li>
+    <a href="/sector/<%= number %>">
+    Sector <%= number %>
+    </a>
+    </li>
+  <% end %>		
 </ul>
 
