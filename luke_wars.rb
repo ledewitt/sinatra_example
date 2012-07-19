@@ -55,7 +55,6 @@ SECTORS = { 1111 => [2000, 3219],
 get('/sector/:number') {
   sector = params[:number].to_i
   if SECTORS.include? sector
-    # "sector_#{params[:number]}"
     erb :sector, locals: { sector:  sector, 
                            neighbors: SECTORS[sector] }
   else
