@@ -56,7 +56,7 @@ get('/sector/:number') {
   sector = params[:number].to_i
   if SECTORS.include? sector
     # "sector_#{params[:number]}"
-    erb :sector, locals: { sector:  params[:number], 
+    erb :sector, locals: { sector:  sector, 
                            neighbors: SECTORS[sector] }
   else
     "Back off man I'm a scientist.  IE not a valid sector of space!"
