@@ -5,9 +5,12 @@
 <ul>
   <% neighbors.each do |number| %>
     <li>
-      <a href="/sector/<%= number %>">
-      Sector <%= number %>
-      </a>
+      <h3>
+	      Sector -
+        <a href="/sector/<%= number %>">
+        <%= number %>
+        </a>
+      </h3>
     </li>
   <% end %>		
 </ul>
