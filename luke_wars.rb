@@ -53,10 +53,11 @@ SECTORS = { 1111 => [2000, 3219],
             5678 => [5555] }
 
 get('/sector/:number') {
-  if SECTORS.include? params[:number].to_i
+  sector = params[:number].to_i
+  if SECTORS.include? sector
     # "sector_#{params[:number]}"
     erb :sector, locals: { sector:  params[:number], 
-                           neighbors: SECTORS[params[:number].to_i] }
+                           neighbors: SECTORS[sector] }
   else
     "Back off man I'm a scientist.  IE not a valid sector of space!"
   end

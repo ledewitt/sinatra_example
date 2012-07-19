@@ -1,19 +1,37 @@
-<h1>Sector <%= locals[:sector] %></h1>
+<head>
+	<style type="text/css" media="screen">
+	  ul {
+		      width:           100%
+		      list-style-type: none;
+          padding:         0;
+          margin:					 0;
+       }
+	  ul li {
+		        width:           100%;
+		        text-align:      center;
+		        list-style-type: none;
+		        padding:         0;
+		        margin:					 0;
+	        }
+	</style>
+</head>
+
+<h1>Sector <%= sector %></h1>
 
 <h2><%= neighbors %> </h2>
 
 <ul>
-	<p>
+	<li>
 		<center>
 			From this sector you may travel to: <br><br>
 		  <% neighbors.each do |number| %>
-		    <p>
+		    <li>
 		      <a href="/sector/<%= number %>">
 				    Sector <%= number %>
 				  </a>
-				</p>
+				</li>
 		  <% end %>	
 		</center>
-	</p>	
+	</li>	
 </ul>
 
